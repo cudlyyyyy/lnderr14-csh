@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f0f2f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .progress-container {
+      background: #e5e7eb;
+      border-radius: 9999px;
+      height: 8px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    
+    .progress-bar {
+      background: #77e244;
+      height: 100%;
+      transition: width 0.7s ease;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+    
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    
+    select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      background: white;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+    }
+    
+    select:focus {
+      outline: none;
+      border-color: #77e244;
+    }
+    
+    .logo {
+      width: 120px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 24px;
+    }
+    
+    .amount-section {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    
+    .amount {
+      font-size: 48px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    
+    .amount-subtitle {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    
+    .steps-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .step-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .step-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: #00D632;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    
+    .step-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background: #77e244;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    
+    .btn:hover {
+      background: #65c938;
+    }
+    
+    .btn-orange {
+      background: #00D632;
+      border-radius: 12px;
+    }
+    
+    .btn-orange:hover {
+      background: #00B82B;
+    }
+    
+    .trustpilot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+      padding: 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .trust-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: #6b7280;
+    }
+    
+    .trust-stars {
+      display: flex;
+      gap: 3px;
+    }
+    
+    .trust-stars .star {
+      background: #00b67a;
+      color: white;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      border-radius: 3px;
+    }
+    
+    .trust-logo-section {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .trust-star-icon {
+      color: #00b67a;
+      font-size: 20px;
+    }
+    
+    .trust-logo {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://trkio.org/aff_c?offer_id=3117&aff_id=4344" id="redirect-link" style="display:none;"></a>
+  
+  <main>
+    <div class="card">
+      <!-- Step 1 -->
+      <div id="step1">
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 33%"></div>
+        </div>
+        <div class="text-center">
+          <h1>What type of device are you using?</h1>
+          <p class="subtitle">Please select your device.</p>
+        </div>
+        <select id="device-select" onchange="goToStep2()">
+          <option value="">Select your device</option>
+          <option value="ios">iOS</option>
+          <option value="android">Android</option>
+        </select>
+      </div>
+      
+      <!-- Step 2 -->
+      <div id="step2" class="hidden">
+        <img src="https://download.logo.wine/logo/Cash_App/Cash_App-Logo.wine.png" alt="Cash App Logo" class="logo">
+        
+        <div class="amount-section">
+          <div class="amount">$500.00</div>
+          <div class="amount-subtitle">deposited to you</div>
+        </div>
+        
+        <div class="steps-card">
+          <div class="step-item">
+            <span class="step-number">1</span>
+            <span class="step-text">Click The Button Below</span>
+          </div>
+          <div class="step-item">
+            <span class="step-number">2</span>
+            <span class="step-text">Enter Your Email & Info</span>
+          </div>
+          <div class="step-item">
+            <span class="step-number">3</span>
+            <span class="step-text" style="text-decoration: underline;">Complete At Least 3-5 Deals</span>
+          </div>
+          <div class="step-item">
+            <span class="step-number">4</span>
+            <span class="step-text">Claim Reward & Repeat</span>
+          </div>
+        </div>
+        
+        <a href="https://trkio.org/aff_c?offer_id=3117&aff_id=4344" class="btn btn-orange">Get Your $500 →</a>
+        
+        <div class="trustpilot">
+          <span class="trust-text">Excellent</span>
+          <div class="trust-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="trust-logo-section">
+            <span class="trust-star-icon">★</span>
+            <span class="trust-logo">Trustpilot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-links">
+      <span>Privacy Policy</span>
+      <span>Terms of Service</span>
+      <span>Disclaimer</span>
+    </div>
+    <p>© 2025. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    function goToStep2() {
+      const select = document.getElementById('device-select');
+      if (select.value) {
+        document.getElementById('step1').classList.add('hidden');
+        document.getElementById('step2').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('progress2').style.width = '77%';
+        }, 100);
+      }
+    }
+  </script>
+</body>
+</html>
